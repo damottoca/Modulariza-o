@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public static void main (String[] args) {
+    MiniChatbot chatbot = new MiniChatbot();
+    Scanner scanner = new Scanner(System.in);
+    String input;
+
+    System.out.println("Olá! Eu sou o MiniChatbot. Como posso te ajudar hoje?");
+
+    while (true) {
+        input = scanner.nextLine();
+        if (input.equalsIgnoreCase("sair")) {
+            System.out.println("Tchau! Até a próxima.");
+            break;
+        }
+        chatbot.saudacao(input);
+        chatbot.perguntarNome(input);
+        chatbot.perguntarEstado(input);
+        chatbot.respostaPadrao();
+    }
+
+    scanner.close();
+}
